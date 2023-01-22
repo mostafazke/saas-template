@@ -64,7 +64,7 @@ export default function Home() {
           </div>
         </div>
         <div className="w-1/2">
-          <Image src="/Hero.svg" width={610} height={650} alt="Hero" />
+          <Image src="/Hero.png" width={610} height={650} alt="Hero" />
         </div>
       </section>
       <section className="flex justify-around pb-20">
