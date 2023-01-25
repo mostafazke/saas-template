@@ -7,9 +7,9 @@ export default function Home() {
   let isYearly = true;
   return (
     <main className={`${DMSans.className} lg:container md:mx-auto`}>
-      <header className="flex justify-between items-center mt-5 pb-20">
+      <header className="px-2 flex justify-between items-center mt-5 pb-20">
         <Image src="/logo.svg" width={200} height={40} alt="Logo" />
-        <nav>
+        <nav className="hidden md:block">
           <ul className="flex font-bold">
             <li className="mx-4">
               <a href="/#" className="active:border-b border-indigo-700 py-2">
@@ -39,20 +39,30 @@ export default function Home() {
             </li>
           </ul>
         </nav>
-        <button className="py-4 px-14 bg-orange-500 rounded-lg text-white text-lg  transition hover:bg-orange-800">
+        <button className="hidden md:block py-4 px-14 bg-orange-500 rounded-lg text-white text-lg  transition hover:bg-orange-800">
           Get Started
         </button>
+        <div className="md:hidden">
+          <button className="w-5" type="button">
+            <span className="block bg-black h-0.5 w-full mb-1"></span>
+            <span className="block bg-black h-0.5 w-full mb-1"></span>
+            <span className="block bg-black h-0.5 w-full mb-1"></span>
+          </button>
+        </div>
       </header>
 
-      <section className="flex items-center justify-around pb-20">
-        <div className="w-1/3">
-          <h1 className="text-7xl font-bold mb-3">
+      <section className="flex items-center justify-around pb-20 flex-wrap flex-col md:flex-row">
+        <div className="px-2 md:w-1/3">
+          <h1 className="text-4xl md:text-5xl font-bold mb-3">
             Grow your subscription business
           </h1>
           <p className="mb-6">
             Outcome-centered products that reduce churn, optimize pricing, and
             grow your subscription business end-to-end.
           </p>
+          <div className="md:hidden">
+            <Image src="/hero.png" width={610} height={650} alt="Hero" />
+          </div>
           <div>
             <button className="py-3 px-12 bg-indigo-600 rounded-lg text-white text-lg transition hover:bg-indigo-800">
               Get Started
@@ -63,48 +73,48 @@ export default function Home() {
             </button>
           </div>
         </div>
-        <div className="w-1/2">
+        <div className="hidden md:block w-1/2">
           <Image src="/hero.png" width={610} height={650} alt="Hero" />
         </div>
       </section>
-      <section className="flex justify-around pb-20">
+      <section className="flex justify-around items-center pb-20 flex-wrap">
         <Image
-          className="transition-all hover:drop-shadow-lg"
+          className="transition-all hover:drop-shadow-lg mb-3"
           src="/partners/1.svg"
           width={110}
           height={30}
           alt="1"
         />
         <Image
-          className="transition-all hover:drop-shadow-lg"
+          className="transition-all hover:drop-shadow-lg mb-3"
           src="/partners/2.svg"
           width={110}
           height={30}
           alt="2"
         />
         <Image
-          className="transition-all hover:drop-shadow-lg"
+          className="transition-all hover:drop-shadow-lg mb-3"
           src="/partners/3.svg"
           width={110}
           height={30}
           alt="3"
         />
         <Image
-          className="transition-all hover:drop-shadow-lg"
+          className="transition-all hover:drop-shadow-lg mb-3"
           src="/partners/4.svg"
           width={110}
           height={30}
           alt="4"
         />
         <Image
-          className="transition-all hover:drop-shadow-lg"
+          className="transition-all hover:drop-shadow-lg mb-3"
           src="/partners/5.svg"
           width={110}
           height={30}
           alt="5"
         />
       </section>
-      <section className="flex items-center justify-evenly pb-20">
+      <section className="px-2 flex items-center justify-evenly pb-20  flex-wrap">
         <div>
           <Image
             src="/content_1.svg"
@@ -113,7 +123,7 @@ export default function Home() {
             alt="content_1"
           />
         </div>
-        <div className="w-1/3">
+        <div className="md:w-1/3">
           <h3 className="font-bold text-4xl text-gray-900 mb-4">
             Subscription index
           </h3>
@@ -126,8 +136,8 @@ export default function Home() {
           </a>
         </div>
       </section>
-      <section className="flex items-center justify-evenly pb-20">
-        <div className="w-1/3">
+      <section className="px-2 flex items-center justify-evenly pb-20 flex-wrap">
+        <div className="md:w-1/3">
           <h3 className="font-bold text-4xl text-gray-900 mb-4">
             In-depth metrics
           </h3>
@@ -148,8 +158,10 @@ export default function Home() {
           />
         </div>
       </section>
-      <section className="flex items-center justify-evenly pb-20" id="features">
-        <div className="flex flex-col items-center text-center w-1/5">
+      <section
+        className="px-2 flex items-center justify-evenly pb-20 flex-wrap"
+        id="features">
+        <div className="flex flex-col items-center text-center w-auto md:w-1/5">
           <Image
             src="/icons/icon_1.svg"
             width={150}
@@ -161,7 +173,7 @@ export default function Home() {
             Make sure your system meets a benchmark before you use it.
           </p>
         </div>
-        <div className="flex flex-col items-center text-center  w-1/5">
+        <div className="flex flex-col items-center text-center w-auto md:w-1/5">
           <Image
             src="/icons/icon_2.svg"
             width={150}
@@ -175,7 +187,7 @@ export default function Home() {
             These are just a few of the common pricing schemes used on website.
           </p>
         </div>
-        <div className="flex flex-col items-center text-center  w-1/5">
+        <div className="flex flex-col items-center text-center w-auto md:w-1/5">
           <Image
             src="/icons/icon_3.svg"
             width={150}
@@ -190,9 +202,9 @@ export default function Home() {
           </p>
         </div>
       </section>
-      <section className="pb-20" id="pricing">
-        <div className="flex justify-between items-center">
-          <h2 className="font-bold text-6xl w-1/3">
+      <section className="px-2 pb-20" id="pricing">
+        <div className="flex justify-between items-center flex-wrap">
+          <h2 className="font-bold text-6xl w-auto md:w-1/3 mb-2">
             Get the right plan for future product.
           </h2>
           <div>
@@ -213,7 +225,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="flex justify-center pt-20">
+        <div className="px-2 flex justify-center pt-20 flex-wrap">
           <div className=" p-8 bg-white text-center rounded-3xl pr-16 shadow-xl">
             <span className="text-gray-700 font-semibold text-sm">Basic</span>
             <p className="pt-2 tracking-wide">
@@ -232,7 +244,7 @@ export default function Home() {
               </a>
             </div>
           </div>
-          <div className="w-80 p-8 bg-gray-900 text-center rounded-3xl text-white border-4 shadow-xl border-white transform scale-125">
+          <div className="w-80 p-8 bg-gray-900 text-center rounded-3xl text-white border-4 shadow-xl border-white transform md:scale-125">
             <h1 className="text-white font-semibold text-2xl">Startup</h1>
             <p className="pt-2 tracking-wide">
               <span className="text-gray-400 align-top">$ </span>
